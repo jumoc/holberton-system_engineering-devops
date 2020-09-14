@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -e "^[[:upper:]]" -e "^[[:lower:]]" /etc/ssh/ssh_config

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#100 advanced task
+while read line;
+do
+    nline=$(echo "$line" | cut -d: -f 1,4,6)
+    echo "$nline"
+done < /etc/passwd

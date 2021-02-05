@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #Prints Holberton School 10 times with a while
-for name in ./*; do
+file=$(ls)
+for name in $file; do
     newname=$(echo "$name" | cut -d"-" -f2)
     echo "$newname"
 done

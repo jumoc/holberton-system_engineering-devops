@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Prints Holberton School 10 times with a while
+i=0
+
+while [ $i -lt 10 ]
+do
+    if [[ $i -eq 8 ]]
+    then
+        echo "9"
+    else
+        echo "Holberton School"
+    fi
+    ((i++))
+done

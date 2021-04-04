@@ -1,0 +1,8 @@
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    # disable passphra
+    BatchMode yes
+    # specify file from where to look for the private key
+    IdentityFile "~/.ssh/holberton"

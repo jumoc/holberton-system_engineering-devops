@@ -1,10 +1,12 @@
 # Setup config file
 file_line { 'config_password':
-  path => '/etc/ssh/ssh_config',
-  line => '\tBatchMode yes',
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
+  line   => 'BatchMode yes',
 }
 
 file_line { 'config_key':
-  path => '/etc/ssh/ssh_config',
-  line => '\tIdentityFile "~/.ssh/holberton"',
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
+  line   => 'IdentityFile "~/.ssh/holberton"',
 }

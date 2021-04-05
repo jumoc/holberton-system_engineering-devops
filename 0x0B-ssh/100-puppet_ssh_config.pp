@@ -8,5 +8,5 @@ file_line { 'config_password':
 file_line { 'config_key':
   ensure => 'present'
   path   => '/etc/ssh/ssh_config',
-  line   => 'IdentityFile "~/.ssh/holberton"',
+  line   => 'IdentityFile ~/.ssh/holberton',
 }

@@ -3,6 +3,6 @@ Host *
     HashKnownHosts yes
     GSSAPIAuthentication yes
     # disable passphra
-    BatchMode yes
+    PasswordAuthentication no
     # specify file from where to look for the private key
     IdentityFile "~/.ssh/holberton"

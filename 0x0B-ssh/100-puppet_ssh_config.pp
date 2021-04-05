@@ -1,10 +1,12 @@
 # Setup config file
 file_line { 'config_password':
+  ensure => 'present'
   path   => '/etc/ssh/ssh_config',
-  line   => '\tPasswordAuthentication no',
+  line   => 'PasswordAuthentication no',
 }
 
 file_line { 'config_key':
+  ensure => 'present'
   path   => '/etc/ssh/ssh_config',
-  line   => '\tIdentityFile "~/.ssh/holberton"',
+  line   => 'IdentityFile "~/.ssh/holberton"',
 }

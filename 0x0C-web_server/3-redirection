@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Redirection
-sed -i '/server_name _;/a \\trewrite ^/redirect_me$ https://www.youtube.com/watch?v=dQw4w9WgXcQ' /etc/nginx/sites-available/default
+sed -i '/server_name _;/a \\trewrite ^/redirect_me$ https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;' /etc/nginx/sites-available/default
 /etc/init.d/nginx reload

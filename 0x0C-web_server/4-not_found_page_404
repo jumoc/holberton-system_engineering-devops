@@ -11,4 +11,4 @@ sed -i '/server_name _;/a \\trewrite ^/redirect_me/* https://www.youtube.com/wat
 echo "Ceci n'est pas une page" > /usr/share/nginx/html/nginx_404.html
 errorpage="\\\n\terror_page 404 /nginx_404.html;\n\tlocation = /nginx_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
 sed -i "/rewrite.*?/a $errorpage" /etc/nginx/sites-available/default
-/etc/init.d/nginx restart
+service nginx start

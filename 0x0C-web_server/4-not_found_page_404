@@ -6,7 +6,7 @@ echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
 service nginx start
 sed -i '/server_name _;/a \\trewrite ^/redirect_me/* https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 # Create a 404 not found error page
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/nginx_404.html
-errorpage="error_page 404 /nginx_404.html;\nlocation = /nginx_404.html {\nroot /usr/share/nginx/html;\ninternal;\n}"
+echo "Ceci n'est pas une page" > /var/www/html/nginx_404.html
+errorpage="\\\n\terror_page 404 /nginx_404.html;\n\tlocation = /nginx_404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
 sed -i "/rewrite.*?/a $errorpage" /etc/nginx/sites-available/default
 /etc/init.d/nginx restart

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Redirection
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
+service nginx start
+sed -i '/server_name _;/a \\trewrite ^/redirect_me/* https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+# Create a 404 not found error page
+echo "Ceci n'est pas une page" > /var/www/html/nginx_404.html
+errorpage="error_page 404 /nginx_404.html;\nlocation = /nginx_404.html {\nroot /var/www/html;\ninternal;\n}"
+sed -i "/rewrite.*?/a $errorpage" /etc/nginx/sites-available/default
+/etc/init.d/nginx restart

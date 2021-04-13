@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+#!/usr/bin/env bash
+# index change
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
+service nginx start
+
+# redirection
+sed -i '/server_name _;/a \\trewrite ^/redirect_me/* https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+# Create a 404 not found error page
+echo "Ceci n'est pas une page " > /usr/share/nginx/html/nginx_404.html
+errorpage="\\\n\terror_page 404 /nginx_404.html;\n\tlocation = /nginx_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
+sed -i "/rewrite.*?/a $errorpage" /etc/nginx/sites-available/default
+
+# Set custom header
+sed -i '/server_name _;/a add_header X-Served-By 2257-web-02;' /etc/nginx/sites-available/default
+service nginx restart

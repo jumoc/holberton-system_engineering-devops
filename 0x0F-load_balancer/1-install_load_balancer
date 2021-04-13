@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Setup a load balancer
 sudo apt -y update
 apt install -y haproxy
 echo "frontend http_front

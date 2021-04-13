@@ -10,3 +10,4 @@ backend http_back
    balance roundrobin
    server 2257-web-01 35.231.197.40:80 check
    server 2257-web-02 35.237.198.52:80 check" >> /etc/haproxy/haproxy.cfg
+systemctl restart haproxy

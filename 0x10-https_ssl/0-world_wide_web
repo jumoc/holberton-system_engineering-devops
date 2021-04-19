@@ -3,7 +3,7 @@
 
 if [ "$#" -eq 2 ]
 then
-    echo "The subdomain $2 is a $(dig +nocmd $2.$1 +noall +answer | awk '{print $4}') record and points to $(dig $1 +short)"
+    echo "The subdomain $2 is a $(dig +nocmd $2.$1 +noall +answer | awk '{print $4}') record and points to $(dig $2.$1 +short)"
 else
     echo "The subdomain www is a $(dig +nocmd www.$1 +noall +answer | awk '{print $4}') record and points to $(dig www.$1 +short)"
     echo "The subdomain lb-01 is a $(dig +nocmd lb-01.$1 +noall +answer | awk '{print $4}') record and points to $(dig lb-01.$1 +short)"

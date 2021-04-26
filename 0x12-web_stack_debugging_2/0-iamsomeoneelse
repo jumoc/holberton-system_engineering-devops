@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Displays whoami command of a given user
+su -c whoami -m "$1"

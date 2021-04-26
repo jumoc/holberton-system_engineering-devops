@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Displays whoami command of a given user
+
+# Stop the service
+service nginx stop
+
+# Change the file permmissions so nginx can start it
+chmod +004 /etc/nginx/nginx.conf
+
+# start the service as nginx
+su -c "service nginx start" -m nginx
+
+# Change nginx listening port
+sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default

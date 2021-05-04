@@ -31,7 +31,8 @@ def get_data():
     ))
 
     for todo in todos.json():
-        print("\t {}".format(todo['title']))
+        if todo['completed']:
+            print("\t {}".format(todo['title']))
 
 
 if __name__ == '__main__':

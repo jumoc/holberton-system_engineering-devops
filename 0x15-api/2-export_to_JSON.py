@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """gather data from an api module"""
-import requests
 import json
+import requests
 import sys
 
 

@@ -5,7 +5,11 @@ import sys
 
 
 def get_data():
-    id = sys.argv[1]
+    try:
+        id = int(sys.argv[1])
+    except:
+        return
+
     user = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(
             id

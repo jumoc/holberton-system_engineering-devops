@@ -18,7 +18,7 @@ def get_data():
     text = ""
     for todo in todos:
         text += '"{}","{}","{}","{}"\n'.format(
-            user['id'], user['name'], todo['completed'], todo['title']
+            user['id'], user['username'], todo['completed'], todo['title']
         )
 
     with open("{}.csv".format(id), "w") as file:

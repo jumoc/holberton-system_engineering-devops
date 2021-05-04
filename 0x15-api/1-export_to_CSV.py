@@ -6,11 +6,13 @@ import sys
 
 
 def get_data():
+    """exports to csv"""
     id = sys.argv[1]
 
     user = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(id)
         ).json()
+
     todos = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}/todos".format(id)
         ).json()

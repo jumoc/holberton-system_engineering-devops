@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """gather data from an api module"""
 import requests
-import sys
 import json
+import sys
 
 
 def get_data():
